@@ -1,0 +1,20 @@
+{
+    "name": "regeda/nest",
+    "type": "library",
+    "description": "Nest is a decorator for invocation key based methods",
+    "keywords": ["decorator", "container", "dependency injection", "proxy"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anthony Regeda",
+            "email": "regedaster@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php":">=5.3"
+    },
+    "autoload": {
+        "psr-0": { "Nest": "src/" }
+    }
+}
