@@ -1,8 +1,8 @@
 Nest
 ========
 
-Nest is a decorator for invocation key based methods for PHP 5.3 that consists
-of just one file and one class.
+Nest is a decorator for key based methods invocation. The class for PHP 5.3 consists
+of just one file.
 
 Usage
 -----

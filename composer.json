@@ -1,7 +1,7 @@
 {
     "name": "regeda/nest",
     "type": "library",
-    "description": "Nest is a decorator for invocation key based methods",
+    "description": "Nest is a decorator for key based methods invocation",
     "keywords": ["decorator", "container", "dependency injection", "proxy"],
     "license": "MIT",
     "authors": [
