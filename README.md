@@ -30,4 +30,4 @@ Invoking a method:
 
     echo $nest['bar']->get(); // -> atata
 
-Source: https://github.com/regeda/php-nest.git
+Source: https://github.com/regeda/php-nest
