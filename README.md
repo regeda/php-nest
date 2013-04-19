@@ -25,11 +25,13 @@ Invoking a method:
 
     $user = new Nest('user', $redis);
 
+    // getter
+
     foreach ($ids as $id) {
         echo $user[$id]['username']->get(); // makes the proxy to $redis->get('user:$id:username')
     }
 
-    // or
+    // setter
 
     $user[$id]['age']->set(18); // $redis->set('user:$id:age', 18)
 
