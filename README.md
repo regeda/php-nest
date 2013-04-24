@@ -21,7 +21,7 @@ Extending the namespace:
 
 Invoking a method:
 
-    $redis = new Redis();
+    $redis = new Redis(); // or $memcached = new Memcached()
 
     $user = new Nest('user', $redis);
 
