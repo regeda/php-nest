@@ -38,7 +38,7 @@ class NestTest extends \PHPUnit_Framework_TestCase
 {
     public function testSimpleCall()
     {
-        $client = $this->getMock('Client', ['get']);
+        $client = $this->getMock('Client', array('get'));
 
         $client
             ->expects($this->once())
@@ -58,11 +58,11 @@ class NestTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('f00:bar', (string) $nest['bar']);
     }
 
-    public function testNestedCall()
+    public function testCallWithArguments()
     {
-        $redis = $this->getMock('Client', ['set']);
+        $client = $this->getMock('Client', array('set'));
 
-        $redis
+        $client
             ->expects($this->once())
             ->method('set')
             ->with(
@@ -71,7 +71,7 @@ class NestTest extends \PHPUnit_Framework_TestCase
             )
             ->will($this->returnValue(true));
 
-        $nest = new Nest('f00', $redis);
+        $nest = new Nest('f00', $client);
 
         $this->assertTrue($nest['bar']->set('hello world'));
     }

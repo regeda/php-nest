@@ -108,8 +108,14 @@ class Nest implements \ArrayAccess
      */
     public function __call($name, $arguments)
     {
-        array_unshift($arguments, $this->ns);
-        return call_user_func_array([$this->client, $name], $arguments);
+        $callback = array($this->client, $name);
+
+        if ($arguments) {
+            array_unshift($arguments, $this->ns);
+            return call_user_func_array($callback, $arguments);
+        }
+
+        return call_user_func($callback, $this->ns);
     }
 
     /**
