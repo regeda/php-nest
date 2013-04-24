@@ -21,13 +21,20 @@ Extending the namespace:
 
 Invoking a method:
 
-    $redis = new Redis();
+    $redis = new Redis(); // or $memcached = new Memcached()
 
-    $nest = new Nest('foo', $redis);
+    $user = new Nest('user', $redis);
 
-    $nest->set('ololo'); // makes the proxy to $redis->set('foo', 'ololo');
-    $nest['bar']->set('atata'); // $redis->set('foo:bar', 'atata');
+    // getter
 
-    echo $nest['bar']->get(); // -> atata
+    foreach ($ids as $id) {
+        echo $user[$id]['username']->get(); // makes the proxy to $redis->get('user:$id:username')
+    }
+
+    // setter
+
+    $user[$id]['age']->set(18); // $redis->set('user:$id:age', 18)
+
+    
 
 Source: https://github.com/regeda/php-nest
