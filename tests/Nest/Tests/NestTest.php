@@ -32,7 +32,7 @@ use \Nest;
  * Nest Test
  *
  * @package nest
- * @author Anthony Regeda
+ * @author  Anthony Regeda <regedaster@gmail.com>
  */
 class NestTest extends \PHPUnit_Framework_TestCase
 {
