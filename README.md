@@ -11,32 +11,36 @@ Usage
 
 Defining the initial namespace and the client:
 
-    $nest = new Nest('foo', new Redis());
-    echo $nest; // -> foo
+```php
+$nest = new Nest('foo', new Redis());
+echo $nest; // -> foo
+```
 
 Extending the namespace:
 
-    $nest = new Nest('foo', new Redis());
+```php
+$nest = new Nest('foo', new Redis());
 
-    echo $nest['bar']; // -> foo:bar
-    echo $nest['bar']['baz']; // -> foo:bar:baz
+echo $nest['bar']; // -> foo:bar
+echo $nest['bar']['baz']; // -> foo:bar:baz
+```
 
 Invoking a method:
 
-    $redis = new Redis(); // or $memcached = new Memcached()
+```php
+$redis = new Redis(); // or $memcached = new Memcached()
 
-    $user = new Nest('user', $redis);
+$user = new Nest('user', $redis);
 
-    // getter
+// getter
 
-    foreach ($ids as $id) {
-        echo $user[$id]['username']->get(); // makes the proxy to $redis->get('user:$id:username')
-    }
+foreach ($ids as $id) {
+    echo $user[$id]['username']->get(); // makes the proxy to $redis->get('user:$id:username')
+}
 
-    // setter
+// setter
 
-    $user[$id]['age']->set(18); // $redis->set('user:$id:age', 18)
-
+$user[$id]['age']->set(18); // $redis->set('user:$id:age', 18)
+```
     
-
 Source: https://github.com/regeda/php-nest
