@@ -2,7 +2,7 @@
     "name": "regeda/nest",
     "type": "library",
     "description": "Nest is a decorator for key based methods invocation",
-    "keywords": ["decorator", "container", "dependency injection", "proxy"],
+    "keywords": ["decorator", "redis"],
     "license": "MIT",
     "authors": [
         {
@@ -13,9 +13,6 @@
     "minimum-stability": "dev",
     "require": {
         "php":">=5.3"
-    },
-    "suggest": {
-        "regeda/nest-helpers": "Adds helpers for integration with different storages"
     },
     "autoload": {
         "psr-0": { "Nest": "src/" }
